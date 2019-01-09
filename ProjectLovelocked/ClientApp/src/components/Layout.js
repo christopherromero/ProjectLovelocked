@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
 import { NavMenu } from './NavMenu';
+import { TransitionMenu } from './TransitionMenu';
 
 export class Layout extends Component {
   displayName = Layout.name
 
   render() {
-    return (
-      <Grid fluid>
+      return (
+          <Grid fluid>
         <Row>
-          <Col sm={3}>
-            <NavMenu />
-          </Col>
-          <Col sm={9}>
-            {this.props.children}
-          </Col>
+            <TransitionMenu />
+            <div id="contentContainer">
+                {this.props.children}
+            </div>
         </Row>
       </Grid>
     );
